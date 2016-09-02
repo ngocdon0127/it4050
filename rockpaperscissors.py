@@ -31,6 +31,8 @@ def process(text):
 		result[players[1]] = {}
 		result[players[1]]['w'] = 0
 		result[players[1]]['l'] = 0
+	c = ['paper', 'scissors', 'rock']
+	# if (choice1 in c and choice2 in c):
 	if (choice1 != choice2):
 		win = players[choices[choice1][choice2]]
 		lose = players[0] if (win == players[1]) else players[1]
@@ -41,8 +43,8 @@ def process(text):
 
 def output():
 	# print result
-	for i in result:
-		if (result[i]['w'] + result[i]['l'] > 0):
+	for i in range(1, n + 1):
+		if (i in result and (result[i]['w'] + result[i]['l'] > 0)):
 			print "%.3f" % (float(result[i]['w']) / (result[i]['w'] + result[i]['l']))
 		else:
 			print "-"
