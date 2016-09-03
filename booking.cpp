@@ -1,3 +1,26 @@
+/**
+ * Author : ngocdon0127
+ * Date   : 2016-09-01 22 : 21 : 00
+ *
+ * Với mỗi phòng, có 3 tham số: Thời gian bắt đầu startTime, thời gian kết thúc finishTime và thời gian dọn dẹp minuteCleans
+ * Vì sau khi trả, phòng không thể dùng ngay mà cần dọn dẹp,
+ * nên coi như thời gian kết thúc = finishTime + minuteCleans và không cần dọn dẹp phòng, trả phòng là có thể dùng tiếp luôn.
+ *
+ * Input chỉ có các mốc thời gian từ năm 2013 đến năm 2016, đơn vị nhỏ nhất là phút
+ * => Tính số lượng phút từ năm 2013 đến năm 2018 (tính đến 2017 thì chạy lỗi test 8) lưu vào biến size
+ * Cấp phát mảng int starts[size]
+ * Đọc input, chuyển đổi ngày tháng thành số phút tính từ 00:00:00 ngày 1/1/2013 đến thời gian đọc được. (x phút)
+ * Nếu thời gian là thời gian nhận phòng, tăng starts[x] lên 1 đơn vị
+ * Nếu thời gian là thời gian trả phòng (đã cộng thêm thời gian dọn dẹp), giảm starts[x] xuống 1 đơn vị
+ *
+ * Như vậy, starts[i] = k có ý nghĩa: tại phút thứ i cần dùng đồng thời k phòng.
+ * Kết quả cần in là giá trị lớn nhất của các phần tử trong mảng starts[i]
+ * 
+ * Độ phực tạp thuật toán: O(n)
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>

@@ -1,3 +1,9 @@
+/**
+ * Đọc từng dòng input và in ra giá trị nằm giữa 2 giá trị còn lại
+ *
+ * Độ phức tạp thuật toán: O(n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <queue>
