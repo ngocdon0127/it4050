@@ -3,7 +3,8 @@ from datetime import *
 def process():
 	text = raw_input().split()
 	num_bookings = int(text[0])
-	sec_clean = int(text[1]) * 60
+	min_clean = int(text[1])
+	# sec_clean =  min_clean * 60
 	bookings = []
 
 	for i in range(num_bookings):
@@ -12,7 +13,7 @@ def process():
 		finish_booking = ' '.join(raw_booking[3:])
 		booking = {}
 		booking['start'] = datetime.strptime(start_booking, "%Y-%m-%d %H:%M")
-		booking['finish'] = datetime.strptime(finish_booking, "%Y-%m-%d %H:%M")
+		booking['finish'] = datetime.strptime(finish_booking, "%Y-%m-%d %H:%M") + timedelta(minutes=min_clean)
 		bookings.append(booking)
 
 	# print bookings
@@ -34,14 +35,20 @@ def process():
 
 	can_reduce = 0
 
+	# for i in range(num_bookings):
+	# 	for j in range(num_bookings):
+	# 		if (i != j):
+	# 			if ((mark[j] == 0) and (bookings[i]['finish'] <= bookings[j]['start'])):
+	# 				diff = bookings[j]['start'] - bookings[i]['finish']
+	# 				if (diff.days * 86400 + diff.seconds >= sec_clean):
+	# 					can_reduce = can_reduce + 1
+	# 					mark[j] = 1
 	for i in range(num_bookings):
 		for j in range(num_bookings):
 			if (i != j):
 				if ((mark[j] == 0) and (bookings[i]['finish'] <= bookings[j]['start'])):
-					diff = bookings[j]['start'] - bookings[i]['finish']
-					if (diff.days * 86400 + diff.seconds >= sec_clean):
-						can_reduce = can_reduce + 1
-						mark[j] = 1
+					can_reduce = can_reduce + 1
+					mark[j] = 1
 
 	print num_bookings - can_reduce
 
