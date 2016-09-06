@@ -118,7 +118,7 @@ int process(){
 			start->parent = NULL;
 			q.push(start);
 			chess[startX][startY] = 1;
-			set.insert(start);
+			s.insert(start);
 			while (!q.empty()){
 				Node *node = q.front();
 				q.pop();
@@ -148,7 +148,7 @@ int process(){
 									newNode->deep = node->deep + 1;
 									chess[k][j] = 1;
 									q.push(newNode);
-									set.insert(newNode);
+									s.insert(newNode);
 								}
 							}
 							
