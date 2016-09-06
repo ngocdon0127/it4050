@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 text = raw_input().split()
 m = int(text[0])
 n = int(text[1])

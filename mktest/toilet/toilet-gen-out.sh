@@ -1,0 +1,1 @@
+python toilet.py < $1/toilet.INP > $1/toilet.OUT

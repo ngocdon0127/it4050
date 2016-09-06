@@ -1,0 +1,1 @@
+./cost-cutting < $1/cost-cutting.INP > $1/cost-cutting.OUT

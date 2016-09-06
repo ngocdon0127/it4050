@@ -1,0 +1,1 @@
+./chess < $1/chess.INP > $1/chess.OUT

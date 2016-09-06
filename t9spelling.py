@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 key_squence = {
 	'a': '2',
 	'b': '22',
