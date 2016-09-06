@@ -1,5 +1,7 @@
 /**
- * Đọc từng dòng input và in ra giá trị nằm giữa 2 giá trị còn lại
+ * Đọc từng dòng input 
+ * Sắp xếp 3 giá trị đầu vào thành dãy không giảm
+ * In ra giá trị thứ 2
  *
  * Độ phức tạp thuật toán: O(n)
  */
