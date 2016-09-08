@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import sys
+import re
+
 key_squence = {
 	'a': '2',
 	'b': '22',
@@ -77,9 +80,6 @@ def process(text, index):
 		pre_char = i
 	s = ''.join(s)
 	print s
-
-
-
 
 n = int(raw_input())
 for i in range(n):
