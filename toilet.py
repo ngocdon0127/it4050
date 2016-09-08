@@ -7,7 +7,6 @@
 # Độ phức tạp thuật toán: O(n)
 #
 
-
 def process1(states):
 	current_state = initial
 	policy = 0

@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Đọc từng dòng imput và in ra chuỗi ký tự tương ứng
+
+# Độ phức tạp thuật toán O(n)
+
 import sys
 import re
 

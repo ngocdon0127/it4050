@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Đọc từng dòng input, tổng hợp số lần mỗi người chơi thắng và thua
+# Tính toán giá trị w / (w + l) đối với từng người và in ra
+#
+# Độ phức tạp thuật toán: O(k*n*(n-1)/2) ~ O(kn^2)
+
 result = {
 	
 }

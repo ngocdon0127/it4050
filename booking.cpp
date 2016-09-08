@@ -45,7 +45,6 @@ int getIndex(time_t t);
 int init();
 
 int main(int argc, char const *argv[]){
-
 	init();
 
 	for (int i = 0; i < numTestCases; ++i){

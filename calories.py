@@ -1,6 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Đọc từng dòng
+# Tính tổng số C (x) và tổng số % (y) trong 1 dòng
+# x Calo sẽ tương ứng với (100 - y) % Calo trong bữa ăn.
+# Từ đó tính được tổng số Calo trong bữa ăn và lượng Calo (C) từ Fat
+# 
+# Độ phức tạp thuật toán O(n)
+
 
 import sys
 import re
@@ -14,6 +21,7 @@ calo_sum = 0
 calo = 0
 fat = 0
 
+# Lượng Calo / gam đối với các loại thức ăn
 calories = [9, 4, 4, 4, 7]
 
 
