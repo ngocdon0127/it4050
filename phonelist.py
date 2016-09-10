@@ -18,7 +18,10 @@ def process():
 				if (index == len(phone) - 1):
 					# print phonelist
 					# print '-1 ne'
-					cur_pointer[char] = -1
+					if (char in cur_pointer):
+						check = False
+					else:
+						cur_pointer[char] = -1
 				else:
 					if (not char in cur_pointer):
 						cur_pointer[char] = {}
