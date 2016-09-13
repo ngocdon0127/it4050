@@ -7,8 +7,20 @@
 
 #define MAX 600000
 
+typedef struct Node Node;
+
+struct Node{
+	int val;
+	Node* next;
+};
+
+using namespace std;
+
 // int a[MAX];
-list<int> a;
+// list<int> a;
+
+Node *a = NULL;
+
 int len = 0;
 
 int merge(int*, int, int, int);
@@ -16,17 +28,16 @@ int mergeSort(int*, int, int);
 int swap(int*, int, int);
 int arrive(int d);
 int send(void);
+int printList(Node *root);
 
 int main(void){
 	char buff[100];
 	gets(buff);
 	while (strlen(buff)){
 		if (strcmp(buff, "#") == 0){
-			// puts("#");
 			send();
 		}
 		else{
-			// printf(":%d\n", atoi(buff));
 			arrive(atoi(buff));
 		}
 		buff[0] = 0;
@@ -37,46 +48,52 @@ int main(void){
 
 int arrive(int d){
 	if (!len){
-		// a[len++] = d;
-		a.push_back(d)
+		a = new Node;
+		a->val = d;
+		a->next = NULL;
+		len++;
 		return 0;
 	}
-	list<int>::iterator it = a.begin()
-	while ((*it < d) && (it != a.end())){
-		it++;
+
+	Node *left = a;
+	Node *left_ = a;
+	while ((left != NULL) && (left->val < d)){
+		left_ = left;
+		left = left->next;
 	}
-	a.insert(it, d);
-	// int left = 0;
-	// while ((a[left] < d) && (left < len)){
-	// 	left++;
-	// }
-	// for(int i = len; i > left; i--){
-	// 	a[i] = a[i - 1];
-	// }
-	// a[left] = d;
-	
-	// len++;
+	Node *p = new Node;
+	p->val = d;
+	p->next = left;
+	left_->next = p;
+	len++;
+
+	// printList(a);
+
 }
 
 int send(){
-	// mergeSort(a, 0, len - 1);
 	int index = 0;
-	int len = a.size();
 	if (len % 2 == 1){
 		index = (len - 1) / 2;
 	}
 	else{
 		index = len / 2;
 	}
-	list<int>::iterator it = a.begin();
+	Node *node = a;
+	Node *node_ = a;
 	for(int i = 0; i < index; i++){
-		it++;
+		node_ = node;
+		node = node->next;
 	}
-	printf("%d\n", *it);
-	// for (int i = index; i < len; ++i){
-	// 	a[index] = a[index + 1];
+	// puts("reach");
+	printf("%d\n", node->val);
+
+	node_->next = node->next;
+	// if (next_){
+	// 	node->next = node->next->next;
 	// }
-	// len--;
+	// free(next_);
+	len--;
 }
 
 int mergeSort(int *a, int left, int right){
@@ -124,4 +141,12 @@ int swap(int *a, int i, int j){
 	a[i]=a[j];
 	a[j]=tmp;
 	return 0;
+}
+
+int printList(Node *root){
+	printf("List: ");
+	while (root){
+		printf("%d ", root->val);
+		root = root->next;
+	}
 }
