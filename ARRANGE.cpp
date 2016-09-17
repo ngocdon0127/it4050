@@ -1,3 +1,10 @@
+/**
+ * Vì 1 ^ n = 1 nên ta đọc input xem có bao nhiêu số 1, sau đó in ra output số số 1 tương ứng
+ * 
+ * Ta có a ^ b > b ^ a với b > a > e (2.71)
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <algorithm>
