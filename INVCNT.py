@@ -1,3 +1,18 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Thực hiện sắp xếp mảng a bằng Merge-Sort
+# Trong quá trình thực hiện hàm Merge,
+# 2 dãy đang xét là dãy trái và dãy phải,
+# mỗi dãy đã được sắp xếp tăng dần
+# vì vậy nếu chọn 1 phần tử ở dãy phải cho vào mảng tmp
+# thì phần tử đó nhỏ hơn tất cả các phàn tử còn lại trong dãy trái
+# do đó tăng số inversion lên (mid - i + 1) đơn vị
+# với mid là phần tử cuối của dãy trái
+# i là phần từ đang xét ở dãy trái
+#
+# Độ phức tạp thuật toán O(n * log(n))
+
 import sys
 
 def merge_sort(a, left, right):
