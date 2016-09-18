@@ -1,0 +1,1 @@
+python haypoints.py < $1/haypoints.INP > $1/haypoints.OUT
