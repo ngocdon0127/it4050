@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Lưu lại dữ liệu của 7 ngày gần nhất bằng phép toán: days[current_day % 7] = day
+# Mỗi khi có truy vấn xuất các từ khóa top, tổng hợp dữ liệu trong biến days và in ra output
+#
+# Độ phức tạp O(n)
+
 import sys
 
 dic = {}

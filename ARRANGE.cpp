@@ -2,6 +2,11 @@
  * Vì 1 ^ n = 1 nên ta đọc input xem có bao nhiêu số 1, sau đó in ra output số số 1 tương ứng
  * 
  * Ta có a ^ b > b ^ a với b > a > e (2.71)
+ *
+ * Do đó ta kiểm tra nếu dãy nhập vào chỉ có 2 số 2 và 3 thì in ra 2 3,
+ * Ngược lại sắp xếp dãy và in ra theo thứ tự giảm dần
+ *
+ * Độ phức tạp O(n * log(n))
  * 
  */
 

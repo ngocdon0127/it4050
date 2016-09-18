@@ -38,6 +38,7 @@ int process(){
 	}
 	free(heights);
 	free(tallers);
+	printf("\n");
 }
 
 int order(int *heights, int *tallers, int index, int count){

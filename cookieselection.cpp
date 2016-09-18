@@ -1,3 +1,12 @@
+/**
+ * 
+ * Mỗi khi đọc được dấu #, tăng biến needSend lên 1 đơn vị
+ * Mỗi khi đọc được 1 số, kiểm tra nếu needSend > 0 thì sắp xếp mảng hiện tại bằng MergeSort,
+ * Sau đó in ra needSend phần tử ở giữa mảng, chèn số vừa đọc được vào cuối mảng a
+ *
+ * Độ phức tạp O(n * log(n))
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>

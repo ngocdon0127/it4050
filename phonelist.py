@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# phonelist là cây, mỗi nút có nhãn là 1 chữ số.
+# Mỗi khi đọc được 1 số điện thoại, gán cur_pointer vào gốc của phonelist
+# Duyệt từng chữ số i của số điện thoại đó, 
+# Kiểm tra xem nếu cur_pointer[i] == -1 thì in ra NO,
+# Ngược lại tạo cây con cho cur_pointer và gán cur_pointer = cur_pointer[i]
+# Duyệt xong số điện thoại, gán cur_pointer[last_digit] = -1,
+# đánh dấu lại đó là kết thúc của 1 số điện thoại
+#
+# Độ phức tạp O(n)
+
 test_cases = int(raw_input())
 
 def process():

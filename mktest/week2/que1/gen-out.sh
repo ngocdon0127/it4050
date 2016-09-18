@@ -1,1 +1,0 @@
-./que1 < $1/que1.INP > $1/que1.OUT

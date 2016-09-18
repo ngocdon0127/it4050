@@ -1,3 +1,15 @@
+/**
+ * heights[] lưu chiều cao
+ * tallers[] lưu lại số người cao hơn và đứng trước
+ * Duyệt toàn bộ heights[], chọn phần tử heights[i] nhỏ nhất mà có tallers[i] bằng 0, vị trí là minIndex
+ * Chuyển phần tử đó lên đầu tiên
+ * Duyệt các phần tử từ phần tử đó trở về sau,
+ * Nếu có heights[i] < heights[minIndex] thì giảm taller[i] đi 1 đơn vị
+ *
+ * Độ phức tạp O(n * n)
+ *
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -36,6 +48,7 @@ int process(){
 	for (int i = 0; i < n; ++i){
 		printf("%d ", heights[i]);
 	}
+	printf("\n");
 	free(heights);
 	free(tallers);
 }

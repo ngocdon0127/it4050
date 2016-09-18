@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Đọc input và tính lương tương ứng với các từ khóa
+#
+# Độ phức tạp O(n)
+
 text = raw_input().split()
 m = int(text[0])
 n = int(text[1])

@@ -1,3 +1,13 @@
+/**
+ * Tạo 3 cấu trúc dữ liệu stack, queue và priority_queue tương ứng.
+ * Đọc input, thực hiện các thao tác tương ứng và đánh dấu nếu cấu trúc dữ liệu nào cho ra output sai
+ * Nếu kết thúc có nhiều hơn 1 cấu trúc dữ liệu chưa bị đánh dấu là sai thì output not sure
+ * Nếu kết thúc có ít hơn 1 cấu trúc dữ liệu chưa bị đánh dấu là sai thì output impossible
+ * Còn lại output ra cấu trúc dữ liệu tương ứng
+ *
+ * Độ phức tạp O(n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stack>
