@@ -1,0 +1,1 @@
+./guessthedatastructure < $1/guessthedatastructure.INP > $1/guessthedatastructure.OUT
