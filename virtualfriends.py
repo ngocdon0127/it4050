@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Phân cụm các nhớm chơi với nhau
+# Nếu 2 người thuộc 2 nhóm khác nhau vừa kết bạn với nhau thì hợp nhất 2 nhóm lại làm 1
+# In kết quả ra màn hình
+#
+# Độ phức tạp thuật toán O(n * m) với n là số test case, m là số lượng quan hệ bạn bè
+
 def process():
 	# social = 1
 	dic = {}

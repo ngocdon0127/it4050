@@ -1,6 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Đọc từng tọa độ vào bộ nhớ
+# Xây dựng đồ thị, các đỉnh là tọa độ điểm đầu, điểm cuối và các nhà hàng
+# Với mỗi đỉnh U, xây dựng tập cạnh {V} sao cho khoảng các UV không lớn hơn 1000 mét
+# (chính là khoảng cách để có thể đi từ U đến V mà không hết bia)
+# Dùng thuật toán BFS để tìm đường đi ngắn nhât từ điểm đầu tới điểm cuối.
+#
+# Nếu tìm được thì in ra happy, ngược lại in ra sad
+#
+# Độ phức tạp thuật toán O(m * (n + e)) với m là số test case, n là số địa điểm, 
+# e là số lớn nhất trong số các cạnh của n địa điểm.
+
 from Queue import *
 
 offset = 40000
@@ -10,9 +21,6 @@ max_distance = 1000
 
 
 def make_pair(a, b):
-	# min_ = a if (a < b) else b
-	# max_ = a if (a > b) else b
-	# return min_ * base + max_
 	return a * base + b
 
 def extract_pair(pair):
@@ -49,15 +57,7 @@ def process():
 				else:
 					graph[coordination] = [coordination_]
 	destination = stores[len(stores) - 1]
-	# for s in stores:
-	# 	mark[s] = 0
-	# print 'graph'
-	# print graph
-	# print 'mark'
-	# print mark
-	# print 'stores'
-	# print stores
-	# return
+	
 	# BFS
 	q = Queue()
 	q.put(stores[0])
@@ -67,7 +67,7 @@ def process():
 		if (coordination == destination):
 			print 'happy'
 			return
-		if (coordination in graph): # Does know why i need to check this
+		if (coordination in graph): # Does not know why i need to check this
 			for c in graph[coordination]:
 				if (mark[c] == 0):
 					q.put(c)

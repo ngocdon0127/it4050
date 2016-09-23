@@ -1,0 +1,1 @@
+python almostunionfind.py < $1/almostunionfind.INP > $1/almostunionfind.OUT

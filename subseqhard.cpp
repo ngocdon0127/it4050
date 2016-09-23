@@ -1,53 +1,40 @@
+/**
+ * Dùng map m để thể hiện map[i] = j nghĩa là có j dãy con trong mảng ban đầu có tổng là i
+ *
+ * Duyệt mảng ban đầu, lưu trữ tổng các phần tử từ đầu dãy đến phần tử hiện tại vào biến sum
+ * Số dãy con thỏa mãn đề bài sẽ tăng thêm 1 lượng là m[sum - 47]
+ *
+ * Độ phức tạp thuật toán O(n * m) với m là số test case
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <map>
 
 using namespace std;
 
-typedef long long int mytype;
-
-int arr[1000010];
-
-int process(void);
+int testCases = 0;
+int n = 0;
+map<long long int, int> m;
+int x = 0;
+long long int count = 0;
+long long int sum = 0;
 
 int main(int argc, char const *argv[]){
-	int testCases = 0;
 	scanf("%d", &testCases);
-	for (int i = 0; i < testCases; ++i){
-		process();
+	while (testCases--) {
+		count = 0;
+		sum = 0;
+		scanf("%d", &n);
+		m.clear();
+		m[0] = 1;
+		while (n--) {
+			scanf("%d", &x);
+			sum += x;
+			m[sum]++;
+			count += m[sum - 47];
+		}
+		printf("%lld\n", count);
 	}
 	return 0;
-}
-
-int process(void){
-	int n = 0;
-	scanf("%d", &n);
-	mytype *sum = (mytype*) malloc(n * sizeof(mytype));
-	sum[0] = 0;
-	mytype tmp = 0;
-	scanf("%lld", &tmp);
-	arr[0] = tmp;
-	sum[0] = tmp;
-	for (int i = 1; i < n; ++i){
-		scanf("%lld", &tmp);
-		arr[i] = tmp;
-		sum[i] = sum[i - 1] + tmp;
-	}
-	// printf("\narr:\n");
-	// for (int i = 0; i < n; ++i){
-	// 	printf("%d ", arr[i]);
-	// }
-	// printf("\nsum:\n");
-	// for (int i = 0; i < n; ++i){
-	// 	printf("%lld ", sum[i]);
-	// }
-	int count = 0;
-	for (int i = 0; i < n - 1; ++i){
-		for (int j = i + 1; j < n; ++j){
-			if (sum[j] - sum[i] == 47){
-				count++;
-			}
-		}
-	}
-	printf("%d\n", count);
-	free(sum);
 }
