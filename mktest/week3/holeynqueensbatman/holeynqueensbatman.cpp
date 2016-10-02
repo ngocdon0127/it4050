@@ -1,18 +1,3 @@
-/**
- * Ý nghĩa các biến:
- * Mảng cols: b[i] = 1 nghĩa là cột  i có 1 quân hậu
- * Mảng c và mảng d có ý nghĩa tương tự.
- * c: mảng ứng với các đường chéo có tổng i + j cố định
- * d: mảng ứng với các đường chéo có hiệu i - j cố định
- *
- * Các hole có chess[i][j] = -1
- * Đệ quy quay lui, thử chèn mỗi hàng 1 quân hậu
- * cập nhật các giá trị của mảng b, c, d
- * Nếu điền được n quân hậu thì tăng biến đếm lên 1 đơn vị
- *
- * Độ phức tạp O(n!)
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 

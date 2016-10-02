@@ -1,3 +1,11 @@
+/**
+ * Đệ quy sinh tất cả các xâu nhị phân độ dài n
+ * Trong quá trình sinh, kiểm tra độ dài của số số 0 liền nhau lớn nhất
+ * Chặt đệ quy nếu có k số 0 liền nhau
+ *
+ * Độ phức tạp thuật toán O(n * n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 

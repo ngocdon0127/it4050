@@ -1,3 +1,12 @@
+/**
+ * Đệ quy quay lui, sinh tất cả các xâu nhị phân độ dài n
+ * Môi xâu nhị phân ứng với 1 cách chọn các đồ vật
+ * Trong quá trình sinh, tính toán khối lượng các vật đã chọn,
+ * nếu vượt quá b thì chặt đệ quy
+ *
+ * Độ phức tạp O(n * n) 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <algorithm>
@@ -23,7 +32,6 @@ int out(void);
 int n = 0;
 int b = 0;
 Object a[50];
-// vector<Object> a;
 int cur_value = 0;
 int cur_weight = 0;
 int max_value = -1;
@@ -33,43 +41,9 @@ int main(int argc, char const *argv[]){
 	Object tmp;
 	for (int i = 0; i < n; ++i){
 		scanf("%d%d", &(a[i].weight), &(a[i].value));
-		// scanf("%d%d", &tmp.weight, &tmp.value);
-		// tmp.pp = (float) tmp.value / tmp.weight;
 		a[i].pp = (float) a[i].value / a[i].weight;
-		// a.push_back(tmp);
+		
 	}
-
-	// sort(a.begin(), a.end(), compare);
-	// sort(a, a + n, compare);
-	// for (int i = 0; i < n; ++i){
-	// 	printf("%d %d %.2f\n", a[i].weight, a[i].value, a[i].pp);
-	// }
-	// // for(vector<Object>::iterator it = a.begin(); it != a.end(); it++){
-	// // 	Object obj = *it;
-	// // 	printf("%d %d %.2f\n", obj.weight, obj.value, obj.pp);
-	// // }
-
-	// int pos = n - 1;
-	// // while (1){
-	// // 	while (b > a[pos].weight){
-	// // 		b -= a[pos].weight;
-	// // 		cur_value += a[pos].value;
-	// // 	}
-	// // 	if ((b > 0) && (pos > 0)){
-	// // 		pos--;
-	// // 	}
-	// // 	else{
-	// // 		break;
-	// // 	}
-	// // }
-
-	// while (pos > 0){
-	// 	if (b > a[pos].weight){
-	// 		b -= a[pos].weight;
-	// 		cur_value += a[pos].value;
-	// 	}
-	// 	pos--;
-	// }
 
 	Try(0);
 

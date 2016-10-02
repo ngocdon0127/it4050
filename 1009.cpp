@@ -1,3 +1,10 @@
+/**
+ * Đệ quy quay lui, liệt kê tất cả các hoán vị độ dài n
+ * Đếm và đưa ra hoán vị thứ k
+ *
+ * Độ phức tạp O(n * n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -16,12 +23,10 @@ int main(int argc, char const *argv[]){
 	scanf("%d%d", &n, &k);
 	mark = (int*) calloc(n + 1, sizeof(int));
 	if (!mark){
-		puts("dmm");
 		return 0;
 	}
 	a = (int*) calloc(n, sizeof(int));
 	if (!a){
-		puts("dmm");
 		return 0;
 	}
 	Try(0);

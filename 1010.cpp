@@ -1,3 +1,14 @@
+/**
+ * Sinh các hoán vị của n thành phố
+ *
+ * Người du lịch xuất phát từ thành phố thứ nhất
+ * Trong khi sinh hoán vị, cập nhật tổng chi phí đã đi tới thành phố thứ i
+ * Nếu chi phí lớn hơn chi phí của hành trình nhỏ nhất đang được lưu lại thì hành trình đang xét không phái là hành trình tối ưu,
+ * => chặt đệ quy
+ *
+ * Độ phức tạp O(n!)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -14,19 +25,9 @@ int Try(int i);
 int in(void);
 
 int main(void){
-	// FILE *f;
-	// int i, j;
-	// f=fopen("Nguoi_Du_Lich.txt", "rt");
-	// if (f==NULL){
-	// 	printf("Khong the mo file Nguoi_Du_Lich.txt.");
-	// 	getch();
-	// 	return 0;
-	// }
-	// fscanf(f, "%i", &n);
-	// printf("116220");
-	// return 0;
 	int m;
 	scanf("%d%d", &n, &m);
+
 	for (int i = 0; i <= n; ++i){
 		for (int j = 0; j <= n; ++j){
 			kc[i][j] = -1;
@@ -39,25 +40,11 @@ int main(void){
 	for (int i = 0; i < m; ++i){
 		scanf("%d%d%d", &c1, &c2, &price);
 		kc[c1][c2] = price;
-		// if (kc[c2][c1] > 0){
-		// 	printf("Hehe %d %d\n", c1, c2);
-		// }
-		// kc[c2][c1] = price;
-
 	}
-	// for(i=0; i<=n; i++)
-	// 	for(j=0; j<=n; j++)
-	// 		fscanf(f, "%i", *(kc+i)+j);	
-	// fclose(f);
-	//time1=time(NULL);
 	a[1] = 1;
 	dd[1] = 1;
 	Try(2);
-	//time2=time(NULL);
-	// for(i=1; i<n+2; i++) printf("%i ", b[i]);
-	// printf("\nkc=%i", min);
 	printf("%d", min);
-	//printf("\ntime=%i", time2-time1);
 	return 0;
 }
 
@@ -95,11 +82,7 @@ int in(void){
 	dis += kc[a[n]][a[1]];
 	if (min > dis){
 		min = dis;
-		// for(i = 1; i <= n; i++)
-		// 	b[i] = a[i];
-		// b[n + 1] = a[1];
 	}
-	//dis=0;
 	dis -= kc[a[n]][a[1]];
 	return 0;
 }

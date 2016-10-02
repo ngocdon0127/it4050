@@ -1,3 +1,11 @@
+/**
+ * Đệ quy sinh các phần từ của tổ hợp chập m của n
+ * Sinh các phần tử của tổ hợp theo thứ tự tăng dần
+ * Mỗi phần tử, chọn sinh trong khoảng phù hợp với vị trí của nó trong mảng a
+ *
+ * Độ phức tạp O(n * n)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -16,32 +24,11 @@ int main(int argc, char const *argv[]){
 	scanf("%d%d%d", &n, &m, &k);
 	a = (int*) calloc(m + 1, sizeof(int));
 	mark = (int*) calloc(m + 2, sizeof(int));
-	// for (int i = 1; i <= m; ++i){
-	// 	a[i] = i;
-	// }
-	// while (k--){
-	// 	inc(m);
-	// }
+	
 	Try(1);
 	printf("-1");
-	// printf("stt = %d\n", stt);
+	
 	return 0;
-}
-
-int inc(int index){
-	int i = a[index];
-	while (mark[i]){
-		i++;
-	}
-	if (i < index + 1){
-		mark[a[index]] = 0;
-		mark[i] = 1;
-		a[index] = i;
-		return 1;
-	}
-	else{
-
-	}
 }
 
 int Try(int index){
@@ -51,16 +38,7 @@ int Try(int index){
 	else {
 		for (int i = a[index - 1] + 1; i <= n - m + index; i++){
 			a[index] = i;
-			// if (i > n){
-			// 	printf("i = %d n = %d m = %d\n", i, n, m);
-			// }
 			Try(index + 1);
-			// if (!mark[i]){
-			// 	a[index] = i;
-			// 	mark[i] = 1;
-			// 	Try(index + 1);
-			// 	mark[i] = 0;
-			// }
 		}
 	}
 }

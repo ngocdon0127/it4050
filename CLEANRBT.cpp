@@ -1,3 +1,15 @@
+/**
+ * Đọc dữ liệu, lưu các vị trí dirty tile và vị trí xuất phát của robot vào 1 tập v
+ * Dùng BFS tính toán khoảng cách ngắn nhất từ mỗi đỉnh trong tập v tới các đỉnh còn lại,
+ * sau khi kết thúc ta được đồ thị gồm:
+ * Các cạnh là các dirty tile và vị trí xuất phát của robot
+ * Các cạnh là khoảng cách ngắn nhất từ mỗi đỉnh tới các đỉnh còn lại
+ * 
+ * Bài toán trở thành bài toán TSP
+ *
+ * Độ phức tạp O(V * (V + E) + V!) ~ O(V * V + V!) với V là số dirty tile, E
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <queue>
@@ -14,8 +26,6 @@ struct Node{
 	int x;
 	int y;
 	int deep;
-	// Node* parent;
-	// int name;
 };
 
 int maxs = MAX * MAX;
@@ -28,13 +38,21 @@ int x0;
 int y0;
 int name0;
 vector<Node*> v;
-int size = 0; // size of v <=> 
+int size = 0; // size of v <=> number of dirty tiles
 
 int a[MAX * MAX];
 int min_dis = UPPER_MIN;
 int dis = 0;
 int dd[MAX * MAX];
 int check = true;
+
+int pos = 0;
+int posX = 0;
+int posY = 0;
+int newX;
+int newY;
+int x;
+int y;
 
 int initGraph(void);
 int TSP(void);
@@ -133,15 +151,13 @@ int initGraph(void){
 		markBFS[start->x][start->y] = 1;
 		while (!q.empty()){
 			Node *node = q.front();
-			int x = node->x;
-			int y = node->y;
+			x = node->x;
+			y = node->y;
 			q.pop();
 			if (floor[x][y] == '*'){
 				// Dirty title
-				int pos = 0;
-				int posX = 0;
-				int posY = 0;
-				for(; pos < size; pos++){
+				
+				for(pos = 0; pos < size; pos++){
 					posX = v[pos]->x;
 					posY = v[pos]->y;
 					// printf("pos %d x %d y %d startX %d startY %d posX %d posY %d\n", pos, x, y, start->x, start->y, posX, posY);
@@ -157,8 +173,7 @@ int initGraph(void){
 			}
 			// printf("Clean tile %d %d\n", x, y);
 			// Clean title
-			int newX;
-			int newY;
+
 			// Up
 			newX = x - 1;
 			newY = y;
@@ -248,12 +263,11 @@ int TSP(void){
 }
 
 int Try(int i){
-	int j;
 	if (i > size) {
 		in();
 	}
 	else{
-		for(j = 0; j < size; j++){
+		for(int j = 0; j < size; j++){
 			if ((dd[j] == 0) && (cost[a[i - 1]][j] != -1)) {
 				dis += cost[a[i - 1]][j];
 				//printf("dis=%i check1=%i\n", dis, check1);
@@ -273,24 +287,9 @@ int Try(int i){
 }
 
 int in(void){
-	int i;
 
-	// if (cost[a[size]][a[1]] == -1){
-	// 	return 0;
-	// }
-	// dis += cost[a[size]][a[1]];
-	if (check || (min_dis > dis)){
-		// if (check){
-		// 	// puts("first");
-		// 	// getch();
-		// }
+	if (min_dis > dis){
 		min_dis = dis;
-		check = false;
-		// for(i = 1; i <= n; i++)
-		// 	b[i] = a[i];
-		// b[n + 1] = a[1];
 	}
-	//dis=0;
-	// dis -= cost[a[size]][a[1]];
 	return 0;
 }
