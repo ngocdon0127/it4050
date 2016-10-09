@@ -1,3 +1,16 @@
+/**
+ * mark[i][j] = 1 nghĩa là ô đó đã được đề bài cho sẵn giá trị
+ * markx[i][j] = 1 nghĩa là hàng i đã được điền số j
+ * marky[i][j] = 1 nghĩa là cột i đã được điền số j
+ * markgrid[i][j][k] = x nghĩa là khối 4x4 tọa độ [i][j] đã có x số k được điền vào (i, j chạy từ 0 đến 1)
+ *
+ * Đệ quy quay lui thử tất cả các trường hợp có thể điền
+ *
+ * Độ phức tạp O(n!) với n là số ô chưa được điền
+ * 
+ */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 

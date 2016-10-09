@@ -1,3 +1,12 @@
+/**
+ * Đánh dấu các ô quân mã có thể đi, tổng cộng n ô
+ *
+ * Dùng thuật toán DFS để sinh ra các nước đi có thể của con mã
+ * Lấy n trừ đi độ dài lớn nhất của đường đi do DFS sinh ra sẽ được kết quả bài toán
+ *
+ * Độ phức tạp O(n!)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <queue>
@@ -51,14 +60,6 @@ int main(int argc, char const *argv[]){
 				chess[i][j] = 0;
 			}
 		}
-		// chess[0][0] = 0;
-
-		// for (int i = 0; i < MAX; ++i){
-		// 	for (int j = 0; j < MAX; ++j){
-		// 		printf("%2d ", chess[i][j]);
-		// 	}
-		// 	puts("");
-		// }
 
 		// DFS
 		a = (Node*) malloc(squares * sizeof(Node));
@@ -71,29 +72,10 @@ int main(int argc, char const *argv[]){
 		}
 		mark[0][0] = 1;
 		cur_squares--;
-		// a[0] = new Node;
 		a[0].x = 0;
 		a[0].y = 0;
-		// puts("start DFS");
 		DFS(1);
-		// puts("Done DFS");
 		free(a);
-
-		// for (int i = 0; i < MAX; ++i){
-		// 	for (int j = 0; j < MAX; ++j){
-		// 		printf("%2d ", chess[i][j]);
-		// 	}
-		// 	puts("");
-		// }
-
-		// puts("---");
-		// for (int i = 0; i < MAX; ++i){
-		// 	for (int j = 0; j < MAX; ++j){
-		// 		printf("%2d ", mark[i][j]);
-		// 	}
-		// 	puts("");
-		// }
-		// puts("---");
 
 		// printf("squares = %d min = %d\n", squares, min_squares);
 		if (min_squares == 1){
@@ -163,33 +145,12 @@ int DFS(int index){
 				if (min_squares > cur_squares){
 					min_squares = cur_squares;
 				}
-				// puts("---");
-				// for (int i = 0; i < MAX; ++i){
-				// 	for (int j = 0; j < MAX; ++j){
-				// 		printf("%d ", mark[i][j]);
-				// 	}
-				// 	puts("");
-				// }
-				// puts("---");
-				// Node *newNode = new Node;
 				a[index].x = newX;
 				a[index].y = newY;
 				DFS(index + 1);
 				cur_squares++;
 				mark[newX][newY] = 0;
 			}
-			// puts("---");
-			// for (int i = 0; i < MAX; ++i){
-			// 	for (int j = 0; j < MAX; ++j){
-			// 		printf("%d ", mark[i][j]);
-			// 	}
-			// 	puts("");
-			// }
-			// puts("---");
-		}
-		if (!canMove){
-			// puts("could not move");
-			// min_squares = (min_squares > cur_squares) ? cur_squares : min_squares;
 		}
 	}
 	

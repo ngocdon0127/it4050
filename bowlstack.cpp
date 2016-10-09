@@ -1,7 +1,13 @@
 /**
  * Đệ quy quay lui, sinh tất cả các hoán vị của n cái cốc
- * Với 2 chiếc cốc bất kỳ, xảy ra 3 trường hợp
+ * Với 2 chiếc cốc a trên b dưới, xảy ra 3 trường hợp
+ * + Cốc a có đáy lớn hơn cốc b => Cốc a đè lên miệng cốc b
+ * + Cốc a có chiều cao thấp hơn cốc b và miệng nhỏ hơn cốc b => cốc a chui vào trong cốc b
+ * + Còn lại, cốc a chui được 1 phần vào cốc b
+ * Với mỗi hoán vị, tính tọa độ của đấy 1 cốc so với tất cả các cốc bên dưới nó rồi lấy giá trị lớn nhất
+ * Cuối cùng lấy độ cao nhỏ nhất của tất cả các cốc.
  *
+ * Độ phức tạp O(n!)
  */
 
 
