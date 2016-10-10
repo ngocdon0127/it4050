@@ -17,7 +17,7 @@
  * Kiểm tra các phần tử của 4 mảng đánh dấu, nếu có 1 phần tử có giá trị từ 2 trở lên thì in ra "invalid"
  * Còn lại là các trường hợp "valid".
  *
- */
+ */ 
 
 
 
