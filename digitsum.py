@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
+# Nếu n có hàng đơn vị bằng 9 thì chia nhỏ bài toán
+# Ngược lại tính tổng các chữ số của n và giải bải toán với n - 1
+#
+# Độ phức tạp thuật toán O(n)
+
 dic = {}
 def f(n):
 	# print 'calculating %d' % n

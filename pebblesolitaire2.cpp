@@ -1,3 +1,12 @@
+/**
+ * Sử dụng BFS
+ * 2 trạng thái mới được sinh ra nếu có 2 pebble liền nhau
+ * Với mỗi trạng thái không có trạng thái con, tính số pebble còn lại
+ * Cập nhật biến count
+ *
+ * Độ phức tạp thuật toán O(N)
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>

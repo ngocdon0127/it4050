@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Lời giản bài toán khi n = 1 là 1; n = 0 là 0
+# Đệ quy tính số tiền đổi được nếu đổi đồng tiền thành 3 đồng có giá trị
+# n / 2, n / 3 và n / 4
+# So sánh với n, output giá trị cao hơn
+#
+# Độ phức tạp thuật toán O(n * n)
 
 dic = {}
 dic[1] = 1
